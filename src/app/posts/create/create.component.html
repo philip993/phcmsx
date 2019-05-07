@@ -1,0 +1,9 @@
+<mat-card>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <input formControlName="title" placeholder="title" />
+
+    <textarea formControlName="details" placeholder="details"></textarea>
+
+    <button type="submit" mat-button>Save</button>
+  </form>
+</mat-card>
