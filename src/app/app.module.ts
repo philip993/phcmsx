@@ -6,6 +6,8 @@ import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { AngularMaterialModule } from "./angular-material.module";
+import { PostModule } from "./posts/post.module";
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -13,7 +15,9 @@ import { AngularMaterialModule } from "./angular-material.module";
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    AngularMaterialModule
+    HttpClientModule,
+    AngularMaterialModule,
+    PostModule
   ],
   providers: [],
   bootstrap: [AppComponent]
