@@ -7,7 +7,8 @@ import { Subject } from "rxjs";
 @Injectable({ providedIn: "root" })
 export class PostService {
   posts: Post[] = [];
-  private postListener = new Subject<{ title: string; details: string }>();
+  post: Post;
+  private postListener = new Subject<Post[]>();
   constructor(private http: HttpClient, private router: Router) {}
 
   getPosts() {
@@ -15,6 +16,7 @@ export class PostService {
       .get<{ posts: Post[] }>("http://localhost:3000/posts")
       .subscribe(responseData => {
         this.posts = responseData.posts;
+        this.postListener.next([...this.posts]);
       });
   }
 
@@ -24,6 +26,7 @@ export class PostService {
 
   newPost(title: string, details: string) {
     const post: Post = {
+      _id: null,
       title: title,
       details: details
     };

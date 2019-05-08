@@ -9,7 +9,7 @@ import { Subscription } from "rxjs";
   styleUrls: ["./view.component.css"]
 })
 export class ViewComponent implements OnInit, OnDestroy {
-  posts: Post;
+  posts: Post[] = [];
   private postSub: Subscription;
   constructor(private postService: PostService) {}
 
@@ -17,7 +17,7 @@ export class ViewComponent implements OnInit, OnDestroy {
     this.postService.getPosts();
     this.postSub = this.postService
       .getPostsUpdated()
-      .subscribe(responseData => {
+      .subscribe((responseData: Post[]) => {
         this.posts = responseData;
       });
   }
