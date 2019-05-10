@@ -1,0 +1,50 @@
+mat-card {
+  margin: auto;
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+  max-width: 720px;
+  width: 100%;
+  background: lightslategrey;
+  margin-bottom: 1rem;
+}
+
+mat-card-action {
+  margin: auto;
+}
+mat-card-action,
+a,
+button {
+  float: right;
+}
+
+.status {
+  float: left;
+}
+
+mat-card-title {
+  text-align: left;
+  font-size: 2rem;
+  margin-left: 25px;
+}
+mat-card-subtitle {
+  text-align: left;
+  font-size: 1.3rem;
+  margin-left: 25px;
+  padding-bottom: 1.5rem;
+}
+
+mat-card-content {
+  font-size: 1rem;
+  font-style: oblique;
+  margin-left: 40px;
+  padding-bottom: 1.5rem;
+}
+
+mat-card-footer {
+  margin-left: 25px;
+  padding-bottom: 1rem;
+}
+
+.container {
+  background-color: burlywood;
+}

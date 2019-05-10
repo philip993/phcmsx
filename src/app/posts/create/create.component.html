@@ -1,9 +1,27 @@
 <mat-card>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
-    <input formControlName="title" placeholder="title" />
-
-    <textarea formControlName="details" placeholder="details"></textarea>
-
+    <mat-form-field>
+      <input formControlName="title" placeholder="Title of post" matInput />
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <textarea
+        formControlName="details"
+        placeholder="Elaborate Post Details here.."
+        matInput
+      ></textarea>
+    </mat-form-field>
+    <br />
+    <mat-form-field>
+      <mat-select formControlName="typer">
+        <mat-label>Privacy</mat-label>
+        <mat-option value="" disabled>Pick privacy option</mat-option>
+        <mat-option *ngFor="let t of types" [value]="t.abb">
+          {{ t.abb }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <br />
     <button type="submit" mat-button>Save</button>
   </form>
 </mat-card>
