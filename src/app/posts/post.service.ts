@@ -24,11 +24,12 @@ export class PostService {
     return this.postListener.asObservable();
   }
 
-  newPost(title: string, details: string) {
+  newPost(title: string, details: string, typer: string) {
     const post: Post = {
       _id: null,
       title: title,
-      details: details
+      details: details,
+      typer: typer
     };
     this.http
       .post("http://localhost:3000/posts", post)
