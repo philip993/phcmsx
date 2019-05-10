@@ -8,6 +8,10 @@ const postSchema = new mongoose.Schema({
   details: {
     type: String,
     required: true
+  },
+  typer: {
+    type: String,
+    enum: ["Public", "Private"]
   }
 });
 

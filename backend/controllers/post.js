@@ -17,7 +17,8 @@ exports.getPosts = (req, res) => {
 exports.newPost = (req, res) => {
   const post = new Post({
     title: req.body.title,
-    details: req.body.details
+    details: req.body.details,
+    typer: req.body.typer
   });
   post
     .save()
