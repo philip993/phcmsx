@@ -10,6 +10,7 @@ import { Subscription } from "rxjs";
 })
 export class ViewComponent implements OnInit, OnDestroy {
   posts: Post[] = [];
+  loading = false;
   private postSub: Subscription;
   constructor(private postService: PostService) {}
 
@@ -19,6 +20,7 @@ export class ViewComponent implements OnInit, OnDestroy {
       .getPostsUpdated()
       .subscribe((responseData: Post[]) => {
         this.posts = responseData;
+        this.loading = true;
       });
   }
 

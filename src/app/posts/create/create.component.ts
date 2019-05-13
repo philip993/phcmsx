@@ -11,10 +11,12 @@ import { FormGroup, FormControl } from "@angular/forms";
 export class CreateComponent implements OnInit {
   post: Post;
   form: FormGroup;
+  loading = false;
   types: any = [{ abb: "Private" }, { abb: "Public" }];
   constructor(private postService: PostService) {}
 
   ngOnInit() {
+    this.loading = true;
     this.form = new FormGroup({
       title: new FormControl(""),
       details: new FormControl(""),
@@ -23,6 +25,7 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit(title: string, details: string, typer: string) {
+    this.loading = true;
     this.postService.newPost(
       this.form.value.title,
       this.form.value.details,

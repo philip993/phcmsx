@@ -1,4 +1,5 @@
 <mat-card>
+  <mat-spinner *ngIf="!loading"></mat-spinner>
   <form [formGroup]="form" (ngSubmit)="onSubmit()">
     <mat-form-field>
       <input formControlName="title" placeholder="Title of post" matInput />
