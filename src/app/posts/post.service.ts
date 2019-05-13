@@ -34,7 +34,7 @@ export class PostService {
     this.http
       .post("http://localhost:3000/posts", post)
       .subscribe(responseData => {
-        this.router.navigateByUrl("/");
+        this.router.navigateByUrl("/view");
         console.log(responseData);
       });
   }
