@@ -6,7 +6,7 @@
         <mat-icon *ngIf="post.typer === 'Private'">vpn_key</mat-icon>
       </a>
 
-      <button mat-button>
+      <button mat-button (click)="onDelete(post._id)">
         <mat-icon>delete</mat-icon>
       </button>
       <a href="#" mat-button>

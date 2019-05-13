@@ -33,3 +33,17 @@ exports.newPost = (req, res) => {
       });
     });
 };
+
+exports.deletePost = (req, res) => {
+  Post.findByIdAndDelete({ _id: req.params.id })
+    .then(post => {
+      res.status(200).json({
+        deletedPost: post
+      });
+    })
+    .catch(err => {
+      res.status(500).json({
+        message: "Cannot delete post! Server error!"
+      });
+    });
+};

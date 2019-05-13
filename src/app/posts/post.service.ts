@@ -38,4 +38,12 @@ export class PostService {
         console.log(responseData);
       });
   }
+
+  deletePost(postId: string) {
+    this.http
+      .delete("http://localhost:3000/posts/" + postId)
+      .subscribe(responseData => {
+        this.getPosts();
+      });
+  }
 }
