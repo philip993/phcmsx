@@ -8,11 +8,18 @@ import {
   MatCardModule,
   MatInputModule,
   MatFormFieldModule,
-  MatSelectModule
+  MatSelectModule,
+  MatProgressSpinnerModule
 } from "@angular/material";
 @NgModule({
   declarations: [],
-  imports: [CommonModule, MatToolbarModule, MatInputModule, MatSelectModule],
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatSelectModule,
+    MatProgressSpinnerModule
+  ],
   exports: [
     CommonModule,
     MatToolbarModule,
@@ -21,7 +28,8 @@ import {
     MatCardModule,
     MatInputModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule
   ]
 })
 export class AngularMaterialModule {}
